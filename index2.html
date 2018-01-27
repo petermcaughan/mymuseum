@@ -2,12 +2,23 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Video</title>	  	
+    <title>QR Maker</title>	  	
+	<script src="js/qrcode.min.js"></script>
+	<script src="js/code.js"></script>
 </head>
 
 <body>
-	This is another page
-	<video width = 400 height = 360 id="sampleMovie" src="test.mp4" type="video/mp4" controls></video>		  
 
+	<label for="qrcode"></label>
+	<input type="text" id="qrcode" name="qrname">
+	
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+		new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+		qrcode.makeCode();
+	</script>
+
+
+	
 </body>
 </html>
