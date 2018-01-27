@@ -10,10 +10,14 @@
 <body>
 
 	
-	Is this working?
+	<form action = "something.php" method = "post">
+		<label for="pic">Create Name</label>
+		<input type = "file" name="pic" id="picture" >
+	</form>
+			
 	<div id="qrcode"></div>
 		<script type="text/javascript">
-			new QRCode(document.getElementById("qrcode"), "www.google.com");
+			new QRCode(document.getElementById("qrcode"), "mymuseum.me/phpImageTest.php?user=phillip");
 		</script>
 	
 
