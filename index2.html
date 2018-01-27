@@ -4,19 +4,25 @@
 	<meta charset="utf-8">
     <title>QR Maker</title>	  	
 	<script src="js/qrcode.min.js"></script>
-	<script src="js/code.js"></script>
+	<script src="jquery.min.js"></script>
 </head>
 
 <body>
 
-	<label for="qrcode"></label>
-	<input type="text" id="qrcode" name="qrname">
 	
+	<form action = "upload.php" method = "post">
+		<label for="pic">Upload File</label>
+		<input type = "file" name="pic" id="picture" >
+		<label for="pic">Create Name</label>
+		<input type = "text" name="user" id = "user">
+		<input type="submit" value="upload image" name="submit">
+	</form>
+			
 	<div id="qrcode"></div>
-	<script type="text/javascript">
-		new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
-		qrcode.makeCode();
-	</script>
+		<script type="text/javascript">
+			new QRCode(document.getElementById("qrcode"), "mymuseum.me/phpImageTest.php?user=phillip");
+		</script>
+	
 
 
 	
