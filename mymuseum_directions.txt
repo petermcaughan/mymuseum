@@ -1,0 +1,15 @@
+First: ssh into the amazon ec2 instance:
+	ssh -i "tutorial-key-pair.pem" ec2-user@ec2-18-219-24-189.us-east-2.compute.amazonaws.com
+
+	relevant locations:
+		html files: /var/www/html
+		.ini files: /etc
+
+Second: Use mysql to handle database within terminal in instance:
+	mysql -h west2-mymuseum-instance1.cykrp8fthqkf.us-east-2.rds.amazonaws.com -P 3306 -u pkmcaughan14 -p
+
+	notable commands:
+		use mymuseum; //Start every session with this
+		select * from users; //View contents of user's table
+		delete from users; //Delete all login info.
+			//Complemented by 'sudo rm -rf * /var/www/html/users/' to delete all user data as well
