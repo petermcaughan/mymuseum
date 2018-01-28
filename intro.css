@@ -3,8 +3,15 @@ body{
 	background-color: #2f4f4f;
 			font-size: 20px;
 	color: 	limegreen;
+	
 
 }
-h1{
+div{
+	padding-top: 50px;
+    padding-right: 5px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+	background-color: lightblue;
+	color: black;
 	
 }
