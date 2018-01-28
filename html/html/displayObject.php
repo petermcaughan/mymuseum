@@ -1,6 +1,7 @@
 <html>
  <head>
-  <title>PHP Test</title>
+  <title>Display Object</title>
+  <link rel="stylesheet" href="css/default.css">
  </head>
  <body>
  <?php 

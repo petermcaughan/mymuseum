@@ -1,6 +1,7 @@
 <html>
  <head>
-  <title>PHP Test</title>
+  <title>Object Collection</title>
+  <link rel="stylesheet" href="css/default.css">
  </head>
  <body>
  <?php 
@@ -9,21 +10,30 @@
 	$username = $_SESSION["username"];
 	$path = "users/".$username;
 	$images = glob($path."/*.{jpg,png,gif}",GLOB_BRACE);
-        
+	if(count($images) == 0) {
+		echo '<p> No Objects to show! Create an Object and add Memories to start hosting!</p>';
+	}
+
+	else {
 	foreach($images as $image) {
 	$path_parts = pathinfo($image);
 	$picname = $path_parts['filename'];
-	echo '<p style="text-align:center;">'.$picname.'</p>';
+	echo '<p style="text-align:center; font-size:30px;">'.$picname.'</p>';
     	echo '<img style="display:block; max-height:600px; max-width:600px; margin: 0 auto;" src="'.$image.'"/><br />';
 	echo '<form style="text-align:center; display:block;" action="editObject.php"method="post"> <input type="submit" value = "Upload Memories for Object" /> <input type="hidden" name="obj" value="'.$picname.'"> </form>';
 	echo '<form style="text-align:center; display:block;" action="displayObject.php" method="post"> <input type="submit" value = "Display Memories for Object" /> <input type="hidden" name="obj" value="'.$picname.'"> </form>';
 	echo '<form style="text-align:center;" action="displayQR.php" method="post"> <input type="submit" value="Generate QR Code for Object" /> <input type="hidden" name="url" value="mymuseum.me/displayObject.php?user='.$username.'&obj='.$picname.'"> </form>';
+	}
 	}
   ?>
 
  <form>
 <input type="button" value="Create New Object" onclick="window.location.href='createObject.html'" />
 </form> 
+
+<form style="position:absolute; top:2%; left:85%;">
+<input type="button" value="Logout" onclick="window.location.href='logout.php'" />
+</form>
 
 </body>
 </html>
